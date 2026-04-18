@@ -53,7 +53,7 @@ Internet → EC2 Public IP (Port 80) → Nginx → App Container (Port 8080) →
 
 ### 🔨 Build
 ```bash
-./gradle bootJar
+./gradlew bootJar
 ```
 
 ### 🚀 Run with Docker Compose
@@ -62,6 +62,9 @@ docker-compose up -d
 ```
 
 Application runs at: http://localhost:8080
+
+## 🐳 DockerHub
+[yukselmert/devops-1](https://hub.docker.com/r/yukselmert/devops-1)
 
 ## ☁️ Deployment Architecture (AWS EC2 + Nginx + Docker)
 The application is containerized with Docker and deployed on AWS EC2.
@@ -89,7 +92,7 @@ http://<EC2_PUBLIC_IP>
 
 2️⃣ Build project:
 ```bash
-./gradle bootJar
+./gradlew bootJar
 ```
 
 3️⃣ Run with Docker Compose:
