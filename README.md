@@ -64,7 +64,7 @@ docker-compose up -d
 Application runs at: http://localhost:8080
 
 ## 🐳 DockerHub
-[yukselmert/devops-1](https://hub.docker.com/r/yukselmert/devops-1)
+[yukselmert/librarymanagement](https://hub.docker.com/r/yukselmert/librarymanagement)
 
 ## ☁️ Deployment Architecture (AWS EC2 + Nginx + Docker)
 The application is containerized with Docker and deployed on AWS EC2.
