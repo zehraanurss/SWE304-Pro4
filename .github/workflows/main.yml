@@ -37,12 +37,7 @@ jobs:
           tags: yukselmert/librarymanagement:latest
 
       - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.DOCKERHUB_TOKEN }}
-          script: |
-            cd ~/DevOps-1
-            docker-compose pull
-            docker-compose up -d
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+          chmod 600 key.pem
+          ssh -o StrictHostKeyChecking=no -i key.pem ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }} "cd ~/DevOps-1 && docker-compose pull && docker-compose up -d"
