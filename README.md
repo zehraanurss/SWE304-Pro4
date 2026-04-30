@@ -11,7 +11,7 @@ The system supports both:
 ## 🛠️ Technology Stack
 - Java 25
 - Spring Boot 4
-- Gradle
+- Gradle 9
 - MySQL
 - Spring Data JPA
 - Thymeleaf
@@ -19,6 +19,7 @@ The system supports both:
 - Docker & Docker Compose
 - AWS EC2
 - Nginx
+- GitHub Actions (CI/CD)
 - Postman (API testing)
 
 ## 🚀 Features
@@ -65,6 +66,14 @@ Application runs at: http://localhost:8080
 
 ## 🐳 DockerHub
 [yukselmert/librarymanagement](https://hub.docker.com/r/yukselmert/librarymanagement)
+
+## ⚙️ CI/CD Pipeline (GitHub Actions)
+
+Every push to `master` automatically:
+1. Builds the JAR file with Gradle
+2. Builds the Docker image
+3. Pushes the image to DockerHub
+4. Deploys to AWS EC2 via SSH
 
 ## ☁️ Deployment Architecture (AWS EC2 + Nginx + Docker)
 The application is containerized with Docker and deployed on AWS EC2.
@@ -119,10 +128,16 @@ Uses JOIN queries and JPA relationships.
 - Gradle build lifecycle management
 - Docker containerization
 - Docker Compose orchestration
+- GitHub Actions CI/CD pipeline
 - AWS EC2 deployment
 - Nginx reverse proxy configuration
 
 ## 📷 Deployment Proof
+
+### ✅ GitHub Actions Pipeline
+![GitHub Actions](docs/github-actions.png)
+
+---
 
 ### 🐳 Docker Containers Running
 ![Docker PS](docs/docker-ps.png)
