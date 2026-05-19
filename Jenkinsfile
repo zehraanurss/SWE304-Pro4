@@ -48,7 +48,7 @@ pipeline {
             steps {
                 echo 'Uygulama Minikube (Kubernetes) üzerinde yayına alınıyor...'
                 
-                sh '/snap/bin/kubectl apply -f k8s.yaml --validate=false'
+                sh 'kubectl apply -f k8s.yaml --validate=false'
             }
         }
     }
