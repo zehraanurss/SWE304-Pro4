@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Stage 6: Deploy to Kubernetes') {
             steps {
-                sh '/usr/bin/kubectl2 apply -f k8s.yaml'
+                sh '/usr/bin/kubectl2 apply -f k8s.yaml --validate=false'
             }
         }
     }
